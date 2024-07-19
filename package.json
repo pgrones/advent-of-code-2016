@@ -1,0 +1,7 @@
+{
+  "name": "advent-of-code-2016",
+  "version": "1.0.0",
+  "description": "\"# advent-of-code-2016\"",
+  "main": "index.js",
+  "type": "module"
+}
