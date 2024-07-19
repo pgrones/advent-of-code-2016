@@ -15,6 +15,8 @@ let password = new Array(8).fill("_");
 let secondPassword = new Array(8).fill("_");
 let i = 0;
 
+print(password.join(""), secondPassword.join(""));
+
 while (
   password.filter((x) => x !== "_").length < 8 ||
   secondPassword.filter((x) => x !== "_").length < 8
