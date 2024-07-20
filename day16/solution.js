@@ -11,12 +11,10 @@ const fold = (a) => {
   return a + "0" + b;
 };
 
-const generateChecksum = (data, length) => {
-  const validData = data.substring(0, length);
-
+const generateChecksum = (data) => {
   let checksum = "";
-  for (let i = 0; i < validData.length; i += 2) {
-    checksum += validData[i] === validData[i + 1] ? "1" : "0";
+  for (let i = 0; i < data.length; i += 2) {
+    checksum += data[i] === data[i + 1] ? "1" : "0";
   }
 
   if (checksum.length % 2 === 0) return generateChecksum(checksum);
@@ -31,7 +29,7 @@ const solve = (length) => {
     data = fold(data);
   }
 
-  console.log(generateChecksum(data, length));
+  console.log(generateChecksum(data.substring(0, length)));
 };
 
 solve(272);
