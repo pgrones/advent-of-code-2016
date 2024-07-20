@@ -42,13 +42,14 @@ const spaces = new Set();
 
 const traverseSteps = (steps, x, y, visited = new Set()) => {
   const coords = x.toString() + "," + y.toString();
+  const wasVisited = visited.has(coords);
 
-  if (steps === -1 || visited.has(coords)) {
+  visited.add(coords);
+
+  if (!steps || wasVisited) {
     visited.forEach((v) => spaces.add(v));
     return;
   }
-
-  visited.add(coords);
 
   for (const [nextX, nextY] of getOpenSpaces(x, y)) {
     traverseSteps(steps - 1, nextX, nextY, new Set([...visited]));
