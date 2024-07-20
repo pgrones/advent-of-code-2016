@@ -37,14 +37,14 @@ const discs = input
 
 const simulate = (discs) => {
   outer: for (let i = 0; ; i++) {
-    let rotations = -1;
+    let rotations = 0;
 
     for (const disc of discs) {
       discs.forEach((disc) => disc.rotate());
       rotations++;
 
       if (disc.currentPosition !== 0) {
-        for (let x = 0; x < rotations; x++) {
+        for (let x = 1; x < rotations; x++) {
           discs.forEach((disc) => disc.counterRotate());
         }
 
