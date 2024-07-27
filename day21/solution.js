@@ -91,8 +91,6 @@ class Scrambler {
         /\d/.test(x[0][0]) ? parseInt(x[0][0]) : x[0][0]
       );
 
-      console.log(this.password.join(""), operation, args);
-
       this[operation](...args, reverse);
     }
 
